@@ -4,31 +4,34 @@
         <div class="col-md-6">
             <div class="mb-3">
                 <label for="fname" class="form-label">Name</label>
+                <small class="errorMessage text-danger" [class.d-none]="reactiveForm.get('Name').valid || reactiveForm.get('Name').untouched ">Name is required</small>
+
                 <input type="text" [class.is-invalid]="reactiveForm.get('Name').invalid && reactiveForm.get('Name').touched " name="name" class="form-control" id="fname" placeholder="Enter your name" formControlName="Name">
-                <small class="text-danger" [class.d-none]="reactiveForm.get('Name').valid || reactiveForm.get('Name').untouched ">Name is required</small>
             </div>
 
             <div class="mb-3">
                 <label for="username" class="form-label">Email</label>
+                <small class="errorMessage text-danger" [class.d-none]="reactiveForm.get('Email').valid || reactiveForm.get('Email').untouched ">Email is required</small>
+
                 <input type="email" [class.is-invalid]="reactiveForm.get('Email').invalid && reactiveForm.get('Email').touched " name="email" class="form-control" id="username" placeholder="" formControlName="Email">
-                <small class="text-danger" [class.d-none]="reactiveForm.get('Email').valid || reactiveForm.get('Email').untouched ">Email is required</small>
             </div>
 
             <div class="mb-3">
                 <label for="bio" class="form-label">Bio</label>
+                <small class="errorMessage text-danger" [class.d-none]="reactiveForm.get('Bio').valid || reactiveForm.get('Bio').untouched ">Bio is required</small>
+
                 <textarea [class.is-invalid]="reactiveForm.get('Bio').invalid && reactiveForm.get('Bio').touched" name="bio" class="form-control" id="bio" rows="3" formControlName="Bio"></textarea>
-                <small class="text-danger" [class.d-none]="reactiveForm.get('Bio').valid || reactiveForm.get('Bio').untouched ">Bio is required</small>
             </div>
 
             <div class="mb-3">
                 <select class="form-select" [class.is-invalid]="reactiveForm.get('Domain').invalid && reactiveForm.get('Domain').touched " name="domain" aria-label="Default select example" formControlName="Domain" >
-                    <small class="text-danger" [class.d-none]="reactiveForm.get('Domain').valid || reactiveForm.get('Domain').untouched ">Domain is required</small>
-
                     <option value="" >Please Select Domain</option>
                     <option value="erp" >ERP</option>
                     <option value="crm" >CRM</option>
                     <option value="ecommerce" >E-commerce</option>
                 </select>
+                <small class="errorMessage text-danger" [class.d-none]="reactiveForm.get('Domain').valid || reactiveForm.get('Domain').untouched ">Domain is required</small>
+
             </div>
 
             <div class="mb-3">

@@ -13,7 +13,7 @@ export class ActiveVendorComponent implements OnInit {
   constructor(private fb:FormBuilder) { }
   reactiveForm=this.fb.group({
     Name:['',Validators.required],
-    Email:['',Validators.required],
+    Email:['',[Validators.required,Validators.email]],
     Bio:['',Validators.required],
     Domain:['',Validators.required]
   })
